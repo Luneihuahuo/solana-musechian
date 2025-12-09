@@ -1,42 +1,62 @@
-🌟 项目简介
+# Solana Dynamic NFT Project
 
-MuseChain 是一个基于 区块链的三维艺术形象共创协作平台。
-它让一个创意从最初的 「灵感」，经过完整的 概念稿 → 线稿 → 三视图 → 3D 建模 → 渲染图，逐步演化为完整的三维视觉作品。
+## Overview
+The Solana Dynamic NFT project is designed to create and manage dynamic NFTs on the Solana blockchain. This project encompasses a complete workflow from idea generation to the final 3D art representation, allowing users to interact with various stages of the NFT creation process.
 
-每一次创作更新都通过 动态 NFT（Evolving NFT） 被永久记录在链上。
-在 MuseChain 中，每一个 NFT 不再是静态图片，而是一个 创作过程的容器。
+## Project Structure
+The project is divided into two main parts: **frontend** and **backend**.
 
-🧩 创作流程
-阶段	内容	链上行为
-🪶 第一阶段：灵感发布	创作者发布文字描述、参考图等	创建初始 NFT（Idea）
-✏️ 第二阶段：设计草图上传	其他创作者提交线稿或概念设计	触发 NFT 元数据更新
-🧱 第三阶段：建模提交	3D 模型文件上传到 IPFS	生成新版本记录（链上 Event）
-💡 第四阶段：渲染与成品展示	最终渲染图提交	完成链上作品档案
+### Frontend
+The frontend is built using Next.js and TypeScript, providing a user-friendly interface for interacting with the NFT project.
 
-最终形成从 “想法 → 作品” 的 完整链上创作档案（On-chain Creative Archive）。
+- **Pages**:
+  - `index.tsx`: Overview and introduction to the project.
+  - `inspiration.tsx`: A space for users to view and submit ideas.
+  - `design.tsx`: A section for users to view and submit design drafts.
+  - `modeling.tsx`: A page for users to view and submit 3D models.
+  - `rendering.tsx`: A section for users to view and submit rendered images.
+  - `gallery.tsx`: A gallery showcasing all stages of the project.
 
-🔗 项目理念
+- **Components**:
+  - `Header.tsx`: Navigation and title component.
+  - `Footer.tsx`: Footer component with copyright and links.
+  - `NFTCard.tsx`: Component for displaying NFT details.
+  - `Viewer3D.tsx`: Component for showcasing 3D models.
 
-MuseChain 为 开放式 IP 共创（Open IP Collaboration） 提供了可信记录与溯源机制：
+- **Styles**:
+  - `globals.css`: Global styles for the application.
 
-每一个参与者的贡献都被 链上确权；
+### Backend
+The backend is built using Node.js and TypeScript, providing the necessary APIs for NFT management.
 
-每个阶段的文件与描述通过 IPFS 永久存储；
+- **Routes**:
+  - `metadata.ts`: Handles NFT metadata operations.
+  - `attestation.ts`: Manages NFT attestation processes.
+  - `onchain.ts`: Handles on-chain updates for NFTs.
 
-所有演化过程通过 Evolving NFT 动态可视化。
+- **Controllers**:
+  - `metadataController.ts`: Contains methods for getting and updating NFT metadata.
+  - `attestationController.ts`: Contains methods for NFT attestation.
 
-这让艺术创作不再是单点创作，而是一个 去中心化的艺术协作网络。
-🤝 团队与愿景
+- **Services**:
+  - `ipfsService.ts`: Interacts with IPFS for asset storage.
+  - `solanaService.ts`: Manages interactions with the Solana blockchain.
+  - `rendererService.ts`: Handles rendering processes.
 
-MuseChain 致力于构建一个 去中心化创作生态，
-让创作的每一步都被记录、确认、共享与再创造。
+### Programs
+The project includes a Solana program defined in Rust, which manages the logic and state of the NFTs.
 
-项目发起人：@luneihuahuo
+### Models
+The project contains source files for 3D models and exports them in a usable format.
 
-方向：Web3 · 动态 NFT · 数字艺术共创
+### Tools
+Tools for off-chain rendering and deployment scripts are included to facilitate the development and deployment process.
 
+## Getting Started
+To get started with the project, clone the repository and install the necessary dependencies for both the frontend and backend. Follow the instructions in the respective `README.md` files located in the `frontend` and `backend` directories for detailed setup and usage instructions.
 
-📜 License
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-本项目基于 MIT License 开源。
-自由修改与分发，保留署名即可。
+## Contributing
+Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
